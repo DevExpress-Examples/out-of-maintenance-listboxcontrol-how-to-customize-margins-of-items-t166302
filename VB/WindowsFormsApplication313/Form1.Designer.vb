@@ -25,8 +25,8 @@
         Private Sub InitializeComponent()
             Me.listBoxControl1 = New DevExpress.XtraEditors.ListBoxControl()
             Me.customListBoxControl1 = New WindowsFormsApplication313.CustomListBoxControl()
-            DirectCast(Me.listBoxControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-            DirectCast(Me.customListBoxControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.listBoxControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.customListBoxControl1, System.ComponentModel.ISupportInitialize).BeginInit()
             Me.SuspendLayout()
             ' 
             ' listBoxControl1
@@ -54,8 +54,8 @@
             Me.Controls.Add(Me.listBoxControl1)
             Me.Name = "Form1"
             Me.Text = "Form1"
-            DirectCast(Me.listBoxControl1, System.ComponentModel.ISupportInitialize).EndInit()
-            DirectCast(Me.customListBoxControl1, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.listBoxControl1, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.customListBoxControl1, System.ComponentModel.ISupportInitialize).EndInit()
             Me.ResumeLayout(False)
 
         End Sub

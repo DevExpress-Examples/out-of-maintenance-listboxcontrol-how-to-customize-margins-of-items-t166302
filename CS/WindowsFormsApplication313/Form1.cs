@@ -45,22 +45,24 @@ namespace WindowsFormsApplication313 {
             : base() {
 
         }
-
+        int indent = 20, customLeftIndent = 5;
         public override int GetHorzPadding(ListBoxItemObjectInfoArgs e) {
             //change width between items
             int result = base.GetHorzPadding(e);
-            return result + 20;
+
+            return result + indent;
         }
         public override void DrawObject(DevExpress.Utils.Drawing.ObjectInfoArgs e) {
             base.DrawObject(e);
         }
         protected override Rectangle CalcItemTextRectangle(ListBoxItemObjectInfoArgs e) {
             //change the left margin here
-            return Rectangle.Inflate(e.TextRect, -fHorzTextIndent - 5, 0);
+            
+            return Rectangle.Inflate(e.TextRect, -GetHorzTextIndent(e) - customLeftIndent, 0);
         }
         public override int GetVertPadding(ListBoxItemObjectInfoArgs e) {
             int result = base.GetVertPadding(e);
-            return result + 20;
+            return result + indent;
         }
     }
     class CustomBaseListBoxPainter : BaseListBoxPainter {

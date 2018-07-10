@@ -53,22 +53,24 @@ Namespace WindowsFormsApplication313
             MyBase.New()
 
         End Sub
-
+        Private indent As Integer = 20, customLeftIndent As Integer = 5
         Public Overrides Function GetHorzPadding(ByVal e As ListBoxItemObjectInfoArgs) As Integer
             'change width between items
             Dim result As Integer = MyBase.GetHorzPadding(e)
-            Return result + 20
+
+            Return result + indent
         End Function
         Public Overrides Sub DrawObject(ByVal e As DevExpress.Utils.Drawing.ObjectInfoArgs)
             MyBase.DrawObject(e)
         End Sub
         Protected Overrides Function CalcItemTextRectangle(ByVal e As ListBoxItemObjectInfoArgs) As Rectangle
             'change the left margin here
-            Return Rectangle.Inflate(e.TextRect, -fHorzTextIndent - 5, 0)
+
+            Return Rectangle.Inflate(e.TextRect, -GetHorzTextIndent(e) - customLeftIndent, 0)
         End Function
         Public Overrides Function GetVertPadding(ByVal e As ListBoxItemObjectInfoArgs) As Integer
             Dim result As Integer = MyBase.GetVertPadding(e)
-            Return result + 20
+            Return result + indent
         End Function
     End Class
     Friend Class CustomBaseListBoxPainter
